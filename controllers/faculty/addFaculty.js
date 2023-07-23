@@ -4,13 +4,13 @@ const Faculty = require("../../models/FacutlyModel");
 // Controller function to add a faculty
 const addFaculty = async (req, res) => {
   try {
-    const { name } = req.body;
-    if(!name){
+    const { name, forms } = req.body;
+    if(!name || forms.length==0){
 
         return res.status(400).json({ error: "Please provide a name" });
     }
     // Create a new faculty document
-    const faculty = new Faculty({ name });
+    const faculty = new Faculty(req.body);
 
     // Save the faculty to the database
     await faculty.save();

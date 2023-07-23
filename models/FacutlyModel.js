@@ -8,7 +8,8 @@ const facultySchema = new mongoose.Schema({
   },
   forms: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Form'
+    ref: 'Form',
+	required:true  
   }]
 }, {
   timestamps: true
