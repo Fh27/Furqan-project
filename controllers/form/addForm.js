@@ -8,7 +8,7 @@ const addForm = async (req, res) => {
 
       const { name, emailId, phoneNumber, schoolName, yearOfStudy, willLaptopBeUsed, reason } = formData;
 
-      if (!name || !emailId || !phoneNumber || !schoolName || !yearOfStudy || !willLaptopBeUsed || !reason) {
+      if (!name || !emailId || !phoneNumber || !schoolName || !yearOfStudy || !reason) {
         return res.status(400).json({ error: 'Missing required fields' });
       }
 
